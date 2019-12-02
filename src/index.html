@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Cosmetrust: 유통 정보 DAPP</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+          background-image:url('images/back.jpg');
+          background-size: cover;
+        }
+    </style>
+    </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2" style="color:white;">
+          <h2 class="text-center"><br>수령하신 제품의 유통과정은 다음과 같습니다</h2>
+          
+          <br/><br/>
+        </div>
+      </div>
+
+      <div class="row" id="list">
+        <!-- 매물 리스트 -->
+      </div>
+    </div>   
+    
+    <div id="template" style="display: none;" >
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-gray panel-company" style= "background-color:white;">
+          <div class="panel-heading" style="color: black;">
+            <h3 class="panel-title"></h3>
+          </div>
+          <div class="panel-body">
+            <img style="width: 100%;" src="" >
+            <br/><br/>
+            <strong>센터 ID</strong>: <span class="id"></span><br/>
+            <strong>지역</strong>: <span class="area"></span><br/>
+            <strong>가격(ETH)</strong>: <span class="price"></span><br/><br/>
+            
+            <button class="btn btn-danger btn-buy" 
+                    type="button" 
+                    data-toggle="modal" 
+                    data-target="#checkModal">
+                    입고
+            </button>
+            <button class="btn btn-dark btn-buyerInfo" 
+                    type="button" 
+                    data-toggle="modal" 
+                    data-target="#managerInfoModal" 
+                    style="display: none;">
+                    관리자 정보
+            </button>          
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div id="events"  style="color: white;"></div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="checkModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">관리자 정보</h4>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="id" />
+            <input type="hidden" id="price" />
+            <input type="text" class="form-control" id="name" placeholder="이름" /><br/>
+            <input type="text" class="form-control" id="date" placeholder="날짜" /><br/>
+            <input type="radio" name="iodate" value="입고">입고
+            <input type="radio" name="iodate" value="출고">출고<br/>
+        
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            <button type="button" class="btn btn-warning" onclick="App.checkCompany(); return false;">제출</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="managerInfoModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">관리자 정보</h4>
+          </div>
+          <div class="modal-body">
+            <strong>계정 주소</strong>: <span id="managerAddress"></span><br/>
+            <strong>이름</strong>: <span id="managerName"></span><br/>
+            <strong>출고 날짜</strong>: <span id="managerDate"></span><br/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/utf8.js"></script>
+  </body>
+</html>

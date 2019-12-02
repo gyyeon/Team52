@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "picture": "images/null1.png",
+    "area": "충청남도 논산시",
+    "price": 1.1
+  },
+  {
+    "id": 1,
+    "picture": "images/null2.png",
+    "area": "충청북도 충주시",
+    "price": 1.2
+  },
+  {
+    "id": 2,
+    "picture": "images/null2.png",
+    "area": "경기도 오산시",
+    "price": 1.3
+  },
+  {
+    "id": 3,
+    "picture": "images/null3.png",
+    "area": "경기도 용인시",
+    "price": 1.4
+  }
+]
